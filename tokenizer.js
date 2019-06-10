@@ -2,10 +2,13 @@ const assert = require('assert')
 // https://regex101.com/r/QdpT2h/8
 const regex = /([^\\]*)\\([a-zA-Z-+]+)\s*([\d-]*)\s*([^\\|]*)\|?\s*([^\\]*)(?:\\\w?\*)?([^\\]*)/g
 
+const attributeRegex = /(?:x-)?(\w+)\s*=\s*"(\w+)"/g
+
 const processLine = (line, tokens) => {
 	let regMatch
 	while (regMatch = regex.exec(line)) {
-		if (regMatch[1]) tokens.push({ tag: 'orphan', text: regMatch[1] })
+		const orphanStart = regMatch[1] && regMatch[1].trim()
+		if (orphanStart) tokens.push({ tag: 'orphan', text: orphanStart })
 		
 		const token = { tag: regMatch[2] }
 		
@@ -17,11 +20,18 @@ const processLine = (line, tokens) => {
 			else token.num = regMatch[3]
 		}
 		if (regMatch[4]) token.text = regMatch[4]
-		if (regMatch[5]) token.attributes = regMatch[5]
+		if (regMatch[5]) {
+			token.attributes = {}
+			let attributeMatch
+			while (attributeMatch = attributeRegex.exec(regMatch[5])) {
+				token.attributes[attributeMatch[1]] = attributeMatch[2]
+			}
+		}
 
 		tokens.push(token)
 
-		if (regMatch[6]) tokens.push({ tag: 'orphan', text: regMatch[1]	})
+		const orphanEnd = regMatch[6] && regMatch[6].trim()
+		if (orphanEnd) tokens.push({ tag: 'orphan', text: orphanEnd })
 	}
 }
 

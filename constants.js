@@ -6,5 +6,7 @@ module.exports = {
 		verseAlt: ['va', 'vp'],
 		paragraph: ['p', 'm', 'po', 'pr', 'cls', 'pmo', 'pm', 'pmc', 'pmr', 'pi', 'mi', 'nb', 'pc', 'ph', 'b'],
 		heading: ['ms', 'mr', 's', 'sr', 'r', 'rq', 'd', 'sp', 'sd'],
+		milestone: ['qt', 'ts', 'z'],
+		text: ['v', 'w'],
 	},
 }
