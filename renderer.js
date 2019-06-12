@@ -1,8 +1,10 @@
 const assert = require('assert')
 const { tagTypes } = require('./constants')
 
-// All verses must have a parent
+// All verses must have a parent (e.g. paragraph)
 const NO_OPRHAN_VERSES = true
+// All tags must have an attribute other than just "tag"
+const NO_EMPTY_CHILDREN = true
 
 const isMilestone = tag => {
 	if (tag.startsWith('z') || tagTypes.milestone.includes(tag.slice(0, tag.length - 2)))
@@ -39,15 +41,16 @@ const renderTokens = tokens => {
 		else if (tagTypes.paragraph.includes(token.tag)) {
 			curChapter.children.push({ children: [], ...token })
 		}
+		else if (NO_EMPTY_CHILDREN && Object.keys(token).length === 1 || isMilestone(token.tag)) {
+			// We don't want to render things without text
+			// or milestones
+		}
 		else if (tagTypes.heading.includes(token.tag)) {
 			curChapter.children.push(token)
 		}
 		else if (tagTypes.verseAlt.includes(token.tag)) {
 			assert(curChild.tag === 'v', tagTypes.verseAlt + ' must follow "v" tag')
 			curChild[token.tag] = token.text
-		}
-		else if (isMilestone(token.tag)) {
-			// We don't want to render milestones
 		}
 		else {
 			// If we're in a paragraph, add it there
