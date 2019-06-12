@@ -8,7 +8,7 @@ const postRender = json => {
 			const newChildren = []
 			child.children.forEach(child2 => {
 				const lastChild = newChildren[newChildren.length - 1]
-				if (['w', 'orphan'].includes(child2.tag)) {
+				if (lastChild && ['w', 'orphan'].includes(child2.tag)) {
 					if (!lastChild.text) {
 						lastChild.text = child2.text
 					}
