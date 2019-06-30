@@ -1,6 +1,6 @@
-[submodule "en_ult"]
-	path = en_ult
-	url = https://git.door43.org/Door43-Catalog/en_ult.git
-[submodule "en_ulb"]
-	path = en_ulb
-	url = https://git.door43.org/Door43-Catalog/en_ulb.git
+[submodule "test/en_ult"]
+	path = test/en_ult
+	url = https://git.door43.org/unfoldingWord/en_ult.git
+[submodule "test/en_ust"]
+	path = test/en_ust
+	url = https://git.door43.org/unfoldingWord/en_ust.git
