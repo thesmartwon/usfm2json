@@ -1,9 +1,9 @@
 {
   "name": "usfm2json",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Yet another USFM to JSON renderer.",
   "bin": {
-    "usfm2json": "./usfm2json.js"
+    "usfm2json": "./cli.js"
   },
   "scripts": {
     "test": "node usfm2json.js ./test/test.usfm"

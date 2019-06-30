@@ -1,24 +1,14 @@
-#!/usr/bin/env node
-
 const fs = require('fs')
 const { processLine } = require('./tokenizer')
 const { renderTokens } = require('./renderer')
 const { postRender } = require('./postrender')
 
-let tokens = []
-const book = fs.readFileSync(process.argv[2], 'utf8')
+const usfm2json = usfmText => {
+	let tokens = []
 
-book.split('\n').forEach(line => processLine(line, tokens))
+	usfmText.split('\n').forEach(line => processLine(line, tokens))
+	return postRender(renderTokens(tokens))
+}
 
-const json = postRender(renderTokens(tokens))
-console.log(JSON.stringify(json, null, 2))
-
-/* process.stdin.resume()
-process.stdin.setEncoding('utf8')
-process.stdin.on('data', function(chunk) {
-    chunk.split("\n").forEach(line => processLine(line, tokens))
-})
-process.stdin.on('end', function() {
-//    console.log(JSON.stringify(renderTokens(tokens), null, 2))
-})*/
+module.exports = { usfm2json }
 
