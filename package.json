@@ -1,0 +1,26 @@
+{
+  "name": "usfm2json",
+  "version": "0.0.1",
+  "description": "Yet another USFM to JSON renderer.",
+  "bin": {
+    "usfm2json": "./usfm2json.js"
+  },
+  "scripts": {
+    "test": "node usfm2json.js test.usfm"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thesmartwon/usfm2json.git"
+  },
+  "keywords": [
+    "usfm",
+    "openbible",
+    "json"
+  ],
+  "author": "thesmartwon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thesmartwon/usfm2json/issues"
+  },
+  "homepage": "https://github.com/thesmartwon/usfm2json#readme"
+}
