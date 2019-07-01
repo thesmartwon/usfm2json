@@ -30,7 +30,7 @@ const processLine = (line, tokens) => {
 
 		tokens.push(token)
 
-		const orphanEnd = regMatch[6] && regMatch[6].trim()
+		const orphanEnd = regMatch[7] && regMatch[7].trim()
 		if (orphanEnd) tokens.push({ tag: 'orphan', text: orphanEnd })
 	}
 }
