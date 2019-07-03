@@ -6,7 +6,7 @@
     "usfm2json": "./cli.js"
   },
   "scripts": {
-    "test": "node usfm2json.js ./test/test.usfm"
+    "test": "node cli.js ./test/test.usfm"
   },
   "repository": {
     "type": "git",

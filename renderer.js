@@ -15,7 +15,8 @@ const isMilestone = tag => {
 
 const renderTokens = tokens => {
 	const res = { chapters: [] }
-	let curChapter = { children: [] }
+	let curChapter = { children: [], num: 1 }
+	let encounteredChapterNum = false
 
 	tokens.forEach(token => {
 		const curChild = curChapter.children[curChapter.children.length - 1]
@@ -32,10 +33,13 @@ const renderTokens = tokens => {
 			curChapter.intro.push(token)
 		}
 		else if (token.tag === 'c') {
-			curChapter.num = token.num
-			if (token.num > 1) {
+			if (!encounteredChapterNum) {
+				curChapter.num = token.num
+				encounteredChapterNum = true
+			}
+			else {
 				res.chapters.push(curChapter)
-				curChapter = { children: [] }
+				curChapter = { children: [], num: token.num }
 			}
 		}
 		else if (tagTypes.paragraph.includes(token.tag)) {
