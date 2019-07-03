@@ -1,4 +1,3 @@
-const fs = require('fs')
 const { processLine } = require('./tokenizer')
 const { renderTokens } = require('./renderer')
 const { postRender } = require('./postrender')
