@@ -22,7 +22,7 @@ const renderTokens = tokens => {
 		const curChild = curChapter.children[curChapter.children.length - 1]
 
 		if (tagTypes.identification.includes(token.tag)) {
-			res[token.tag] = token.text
+			res[`${token.tag}${token.num || ''}`] = token.text
 		}
 		else if (tagTypes.intro.includes(token.tag)) {
 			res.intro = res.intro || []
@@ -47,7 +47,7 @@ const renderTokens = tokens => {
 		}
 		else if (NO_EMPTY_CHILDREN && Object.keys(token).length === 1 || isMilestone(token.tag)) {
 			// We don't want to render things without text
-			// or milestones
+			// or any milestones which waste a ton of space
 		}
 		else if (tagTypes.heading.includes(token.tag)) {
 			curChapter.children.push(token)
