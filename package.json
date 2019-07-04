@@ -1,6 +1,6 @@
 {
   "name": "usfm2json",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "Yet another USFM to JSON renderer.",
   "bin": {
     "usfm2json": "./cli.js"

@@ -21,6 +21,17 @@ const renderTokens = tokens => {
 	tokens.forEach(token => {
 		const curChild = curChapter.children[curChapter.children.length - 1]
 
+		if (token.num) {
+			// If not supposed to have \marker# (like "\id 2 Cor")
+			if (!tagTypes.numbered.includes(token.tag)) {
+				token.text = token.num + token.text
+				delete token.num
+			}
+			else if (typeof token.num === 'string') {
+				token.num = token.num.trimEnd()
+			}
+		}
+
 		if (tagTypes.identification.includes(token.tag)) {
 			res[`${token.tag}${token.num || ''}`] = token.text
 		}

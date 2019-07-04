@@ -1,6 +1,6 @@
 const assert = require('assert')
-// https://regex101.com/r/QdpT2h/11
-const regex = /([^\\]*)\\([a-zA-Z-+]+)\s*([\d-]*)\s*([^\\|]*)\|?\s*([^\\]*)(\\\w*\*)?([^\\]*)/g
+// https://regex101.com/r/QdpT2h/12
+const regex = /([^\\]*)\\([a-zA-Z-+]+)\s*([\d-]*\s*)([^\\|]*)\|?\s*([^\\]*)(\\\w*\*)?([^\\]*)/g
 
 const attributeRegex = /(?:x-)?(\w+)\s*=\s*"(\w+)"/g
 
