@@ -1,12 +1,12 @@
 {
   "name": "usfm2json",
   "version": "0.0.12",
-  "description": "Yet another USFM to JSON renderer.",
+  "description": "Yet another USFM to JSON renderer. Uses a Pratt parser.",
   "bin": {
     "usfm2json": "./cli.js"
   },
   "scripts": {
-    "test": "node cli.js ./test/test.usfm"
+    "test": "node ./cli.js ./test/test.usfm"
   },
   "repository": {
     "type": "git",
