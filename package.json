@@ -1,6 +1,6 @@
 {
   "name": "usfm2json",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "Yet another USFM to JSON parser",
   "bin": {
     "usfm2json": "./cli.js"
@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/thesmartwon/usfm2json/issues"
   },
-  "homepage": "https://github.com/thesmartwon/usfm2json#readme"
+  "homepage": "https://github.com/thesmartwon/usfm2json#readme",
+  "devDependencies": {
+    "glob": "^7.1.6"
+  }
 }
