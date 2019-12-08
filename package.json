@@ -6,7 +6,7 @@
     "usfm2json": "./cli.js"
   },
   "scripts": {
-    "test": "node ./cli.js ./test/test.usfm"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,8 @@
   },
   "homepage": "https://github.com/thesmartwon/usfm2json#readme",
   "devDependencies": {
-    "glob": "^7.1.6"
+    "glob": "^7.1.6",
+    "jest": "^24.9.0",
+    "jest-file-snapshot": "^0.3.8"
   }
 }
