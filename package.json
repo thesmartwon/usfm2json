@@ -1,7 +1,7 @@
 {
   "name": "usfm2json",
-  "version": "0.0.12",
-  "description": "Yet another USFM to JSON renderer. Uses a Pratt parser.",
+  "version": "0.0.13",
+  "description": "Yet another USFM to JSON parser",
   "bin": {
     "usfm2json": "./cli.js"
   },
