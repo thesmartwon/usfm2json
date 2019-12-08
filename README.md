@@ -14,7 +14,7 @@ chapters: [
 	[
 		{t: 's5', v: 'blah blah'},
 		{t: 'p', v: [
-			{t: 'v', n: 1, 'You have head that'}
+			{t: 'v', n: 1, v: 'You have head that'}
 			{t: 'w', v: 'Bob said, "'},
 			{t: 'q', v: 'ABCDEFG'},
 			{t: 'w', v: '," and then he was happy.'},
