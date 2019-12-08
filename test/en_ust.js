@@ -1,5 +1,5 @@
 const { takeSnapshot } = require('./util/takeSnapshot')
 
 describe('en_ust', () => {
-	takeSnapshot('./test/en_ust/*.usfm')
+	takeSnapshot('en_ust', './test/en_ust/*.usfm')
 })
